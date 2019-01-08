@@ -21,3 +21,10 @@ def timestamp_to_dateformat(timest=1546824863):
     m_time = datetime.datetime.fromtimesstamp(timest)
     m_date = m_time.strftime("%Y-%m-%d %H:%M:%S")    
     # output : 2019-01-07 10:34:23
+    
+
+# datetime string Convert to Timestamp
+def date_string_2_timestamp(date_string):
+    # strString = "2019-01-03T16:27:00"
+    timestamp = time.mktime(datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S").timetuple())
+    return int(timestamp)
